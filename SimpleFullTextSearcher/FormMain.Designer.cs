@@ -57,6 +57,7 @@
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ruLangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enLangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.sfsStatusStrip.SuspendLayout();
             this.sfsSearchCriteriaGroupBox.SuspendLayout();
             this.sfsSearchResultsGroupBox.SuspendLayout();
@@ -265,7 +266,7 @@
             this.sfsSearchResultsGroupBox.Controls.Add(this.sfsSearchResultsTreeView);
             this.sfsSearchResultsGroupBox.Location = new System.Drawing.Point(12, 193);
             this.sfsSearchResultsGroupBox.Name = "sfsSearchResultsGroupBox";
-            this.sfsSearchResultsGroupBox.Size = new System.Drawing.Size(512, 366);
+            this.sfsSearchResultsGroupBox.Size = new System.Drawing.Size(512, 363);
             this.sfsSearchResultsGroupBox.TabIndex = 4;
             this.sfsSearchResultsGroupBox.TabStop = false;
             this.sfsSearchResultsGroupBox.Text = "Search results";
@@ -277,8 +278,9 @@
             this.sfsSearchResultsTreeView.Location = new System.Drawing.Point(7, 20);
             this.sfsSearchResultsTreeView.Name = "sfsSearchResultsTreeView";
             this.sfsSearchResultsTreeView.SelectedImageIndex = 0;
-            this.sfsSearchResultsTreeView.Size = new System.Drawing.Size(499, 376);
+            this.sfsSearchResultsTreeView.Size = new System.Drawing.Size(499, 340);
             this.sfsSearchResultsTreeView.TabIndex = 0;
+            this.sfsSearchResultsTreeView.DoubleClick += new System.EventHandler(this.sfsSearchResultsTreeView_DoubleClick);
             // 
             // sfsTreeViewImageList
             // 
@@ -334,11 +336,22 @@
             this.enLangToolStripMenuItem.Text = "English";
             this.enLangToolStripMenuItem.Click += new System.EventHandler(this.EnLangToolStripMenuItem_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(132, 164);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "EXP";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 584);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.sfsSearchResultsGroupBox);
             this.Controls.Add(this.sfsSearchStopButton);
             this.Controls.Add(this.sfsSearchPauseButton);
@@ -398,6 +411,7 @@
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ruLangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enLangToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 

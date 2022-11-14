@@ -121,7 +121,6 @@ namespace SimpleFullTextSearcher.FileSearcher
                         SearchDirectory(dirInfo);
                     }
                 }
-
             }
             else
             {
@@ -209,6 +208,7 @@ namespace SimpleFullTextSearcher.FileSearcher
                     case ".json":
                     case ".csv":
                     case ".yaml":
+                    case ".sc2":
                         try
                         {
                             var encoding = TextFileEncodingHelper.DetectTextFileEncoding(info.FullName) ?? _searchParams.Encoding;

@@ -1,4 +1,9 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using SimpleFullTextSearcher.Extensions;
+using SimpleFullTextSearcher.FileSearcher;
+using SimpleFullTextSearcher.FileSearcher.EventArgs;
+using SimpleFullTextSearcher.FileSearcher.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -7,10 +12,6 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
-using SimpleFullTextSearcher.Extensions;
-using SimpleFullTextSearcher.FileSearcher;
-using SimpleFullTextSearcher.FileSearcher.EventArgs;
-using SimpleFullTextSearcher.FileSearcher.Helpers;
 
 namespace SimpleFullTextSearcher
 {
@@ -76,7 +77,7 @@ namespace SimpleFullTextSearcher
             {
                 try
                 {
-                    if(File.Exists(SearchCriteriaFilePath))
+                    if (File.Exists(SearchCriteriaFilePath))
                         return (Settings)new JavaScriptSerializer().Deserialize(File.ReadAllText(SearchCriteriaFilePath), typeof(Settings));
                     return default(Settings);
                 }
@@ -243,7 +244,7 @@ namespace SimpleFullTextSearcher
             sfsSearchResultsTreeView.Nodes.Clear();
 
             var pars = new SearcherParams(sfsInitialDirectoryTextBox.Text.Trim(), true, sfsFileNamePatternTextBox.Text,
-                true, sfsSearchTextTextBox.Text.Trim(), Encoding.ASCII, searchInZipArchiveCheckBox.Checked , searchInImagescheckBox.Checked);
+                true, sfsSearchTextTextBox.Text.Trim(), Encoding.ASCII, searchInZipArchiveCheckBox.Checked, searchInImagescheckBox.Checked);
 
             if (Searcher.Start(pars))
             {
@@ -385,10 +386,10 @@ namespace SimpleFullTextSearcher
             // and if the item is a another ToolStripMenuItem to uncheck this.
             foreach (var ltoolStripMenuItem in (from object
                     item in selectedMenuItem.Owner.Items
-                let ltoolStripMenuItem = item as ToolStripMenuItem
-                where ltoolStripMenuItem != null
-                where !item.Equals(selectedMenuItem)
-                select ltoolStripMenuItem))
+                                                let ltoolStripMenuItem = item as ToolStripMenuItem
+                                                where ltoolStripMenuItem != null
+                                                where !item.Equals(selectedMenuItem)
+                                                select ltoolStripMenuItem))
                 (ltoolStripMenuItem).Checked = false;
 
             // This line is optional, for show the mainMenu after click
@@ -427,6 +428,48 @@ namespace SimpleFullTextSearcher
             this.sfsSearchResultsGroupBox.Text = T._("Search results");
             this.sfsAboutButton.Text = T._("About");
             this.languageToolStripMenuItem.Text = T._("Language");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            ExcelPackage excel = new ExcelPackage();
+            var worksheet = excel.Workbook.Worksheets.Add("TreeView Export");
+            int rowCounter = 0;
+
+            RecurseNodes(sfsSearchResultsTreeView.Nodes, 1);
+
+            void RecurseNodes(TreeNodeCollection currentNode, int col)
+            {
+                foreach (TreeNode node in currentNode)
+                {
+                    rowCounter = rowCounter + 1;
+                    worksheet.Cells[rowCounter, col].Value = node.Text;
+                    if (node.FirstNode != null)
+                        RecurseNodes(node.Nodes, col + 1);
+                }
+            }
+
+            var fileDialogue = new SaveFileDialog();
+            fileDialogue.Filter = "xlsx Dateien (*.xlsx)|*.xlsx";
+            if (fileDialogue.ShowDialog() == DialogResult.OK)
+                excel.SaveAs(new FileInfo(fileDialogue.FileName));
+            MessageBox.Show($@"Datei {fileDialogue.FileName} exportiert.");
+        }
+
+        private void sfsSearchResultsTreeView_DoubleClick(object sender, EventArgs e)
+        {
+            FileInfo fileName;
+            fileName = new FileInfo(sfsSearchResultsTreeView.SelectedNode.FullPath);
+            if (fileName.Exists)
+            {
+                var process = new System.Diagnostics.Process();
+                process.StartInfo = new System.Diagnostics.ProcessStartInfo() { UseShellExecute = true, FileName = fileName.FullName };
+                process.Start();
+            } else
+            {
+                MessageBox.Show($@"Datei {fileName.FullName} existiert nicht.");
+            }
         }
     }
 }
