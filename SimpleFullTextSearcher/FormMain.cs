@@ -281,7 +281,7 @@ namespace SimpleFullTextSearcher
         private void sfsSearchTextClearButton_Click(object sender, EventArgs e) => sfsSearchTextTextBox.Text = "";
 
         private void sfsAboutButton_Click(object sender, EventArgs e) => MessageBox.Show(
-            T._("The program is designed for full-text search in files with specified search criteria.") + "\n" + T._("Author: unchase (https://github.com/unchase), august 2018."),
+            T._("The program is designed for full-text search in files with specified search criteria.") + "\n" + T._("Author: unchase (https://github.com/unchase), august 2018. Fork by Harry Neufeld (https://github.com/harryneufeld)."),
             T._("About"), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         #endregion
@@ -430,31 +430,15 @@ namespace SimpleFullTextSearcher
             this.languageToolStripMenuItem.Text = T._("Language");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnExport_Click(object sender, EventArgs e)
         {
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            ExcelPackage excel = new ExcelPackage();
-            var worksheet = excel.Workbook.Worksheets.Add("TreeView Export");
-            int rowCounter = 0;
-
-            RecurseNodes(sfsSearchResultsTreeView.Nodes, 1);
-
-            void RecurseNodes(TreeNodeCollection currentNode, int col)
+            if (ExportHelper.ExportTreeViewNodesToExcel(sfsSearchResultsTreeView))
             {
-                foreach (TreeNode node in currentNode)
-                {
-                    rowCounter = rowCounter + 1;
-                    worksheet.Cells[rowCounter, col].Value = node.Text;
-                    if (node.FirstNode != null)
-                        RecurseNodes(node.Nodes, col + 1);
-                }
+                MessageBox.Show("Export to excel-file finished.");
+            } else
+            {
+                MessageBox.Show("Error exporting to excel-file.");
             }
-
-            var fileDialogue = new SaveFileDialog();
-            fileDialogue.Filter = "xlsx Dateien (*.xlsx)|*.xlsx";
-            if (fileDialogue.ShowDialog() == DialogResult.OK)
-                excel.SaveAs(new FileInfo(fileDialogue.FileName));
-            MessageBox.Show($@"Datei {fileDialogue.FileName} exportiert.");
         }
 
         private void sfsSearchResultsTreeView_DoubleClick(object sender, EventArgs e)

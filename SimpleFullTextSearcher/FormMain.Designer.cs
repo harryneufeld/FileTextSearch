@@ -57,7 +57,7 @@
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ruLangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enLangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.sfsStatusStrip.SuspendLayout();
             this.sfsSearchCriteriaGroupBox.SuspendLayout();
             this.sfsSearchResultsGroupBox.SuspendLayout();
@@ -107,6 +107,7 @@
             this.searchInImagescheckBox.Name = "searchInImagescheckBox";
             this.searchInImagescheckBox.Size = new System.Drawing.Size(155, 17);
             this.searchInImagescheckBox.TabIndex = 4;
+            this.searchInImagescheckBox.TabStop = false;
             this.searchInImagescheckBox.Text = "Search in image files (OCR)";
             this.searchInImagescheckBox.UseVisualStyleBackColor = true;
             // 
@@ -118,6 +119,7 @@
             this.searchInZipArchiveCheckBox.Name = "searchInZipArchiveCheckBox";
             this.searchInZipArchiveCheckBox.Size = new System.Drawing.Size(130, 17);
             this.searchInZipArchiveCheckBox.TabIndex = 3;
+            this.searchInZipArchiveCheckBox.TabStop = false;
             this.searchInZipArchiveCheckBox.Text = "Search in zip-archives";
             this.searchInZipArchiveCheckBox.UseVisualStyleBackColor = true;
             this.searchInZipArchiveCheckBox.Visible = false;
@@ -129,6 +131,7 @@
             this.sfsSearchTextClearButton.Name = "sfsSearchTextClearButton";
             this.sfsSearchTextClearButton.Size = new System.Drawing.Size(24, 23);
             this.sfsSearchTextClearButton.TabIndex = 2;
+            this.sfsSearchTextClearButton.TabStop = false;
             this.sfsSearchTextClearButton.UseVisualStyleBackColor = true;
             this.sfsSearchTextClearButton.Click += new System.EventHandler(this.sfsSearchTextClearButton_Click);
             // 
@@ -139,6 +142,7 @@
             this.sfsFileNamePatternClearButton.Name = "sfsFileNamePatternClearButton";
             this.sfsFileNamePatternClearButton.Size = new System.Drawing.Size(24, 23);
             this.sfsFileNamePatternClearButton.TabIndex = 2;
+            this.sfsFileNamePatternClearButton.TabStop = false;
             this.sfsFileNamePatternClearButton.UseVisualStyleBackColor = true;
             this.sfsFileNamePatternClearButton.Click += new System.EventHandler(this.sfsFileNamePatternClearButton_Click);
             // 
@@ -149,6 +153,7 @@
             this.sfsInitialDirectoryClearButton.Name = "sfsInitialDirectoryClearButton";
             this.sfsInitialDirectoryClearButton.Size = new System.Drawing.Size(24, 23);
             this.sfsInitialDirectoryClearButton.TabIndex = 2;
+            this.sfsInitialDirectoryClearButton.TabStop = false;
             this.sfsInitialDirectoryClearButton.UseVisualStyleBackColor = true;
             this.sfsInitialDirectoryClearButton.Click += new System.EventHandler(this.sfsInitialDirectoryClearButton_Click);
             // 
@@ -159,6 +164,7 @@
             this.sfsInitialDirectorySelectButton.Name = "sfsInitialDirectorySelectButton";
             this.sfsInitialDirectorySelectButton.Size = new System.Drawing.Size(24, 23);
             this.sfsInitialDirectorySelectButton.TabIndex = 2;
+            this.sfsInitialDirectorySelectButton.TabStop = false;
             this.sfsInitialDirectorySelectButton.UseVisualStyleBackColor = true;
             this.sfsInitialDirectorySelectButton.Click += new System.EventHandler(this.sfsInitialDirectorySelectButton_Click);
             // 
@@ -167,7 +173,7 @@
             this.sfsSearchTextTextBox.Location = new System.Drawing.Point(178, 74);
             this.sfsSearchTextTextBox.Name = "sfsSearchTextTextBox";
             this.sfsSearchTextTextBox.Size = new System.Drawing.Size(298, 20);
-            this.sfsSearchTextTextBox.TabIndex = 1;
+            this.sfsSearchTextTextBox.TabIndex = 3;
             // 
             // sfsSearchTextLabel
             // 
@@ -183,7 +189,7 @@
             this.sfsFileNamePatternTextBox.Location = new System.Drawing.Point(178, 48);
             this.sfsFileNamePatternTextBox.Name = "sfsFileNamePatternTextBox";
             this.sfsFileNamePatternTextBox.Size = new System.Drawing.Size(298, 20);
-            this.sfsFileNamePatternTextBox.TabIndex = 1;
+            this.sfsFileNamePatternTextBox.TabIndex = 2;
             // 
             // sfsFileNamePatternLabel
             // 
@@ -198,7 +204,6 @@
             // 
             this.sfsInitialDirectoryTextBox.Location = new System.Drawing.Point(178, 22);
             this.sfsInitialDirectoryTextBox.Name = "sfsInitialDirectoryTextBox";
-            this.sfsInitialDirectoryTextBox.ReadOnly = true;
             this.sfsInitialDirectoryTextBox.Size = new System.Drawing.Size(268, 20);
             this.sfsInitialDirectoryTextBox.TabIndex = 1;
             // 
@@ -226,7 +231,7 @@
             this.sfsSearchStartButton.Location = new System.Drawing.Point(215, 163);
             this.sfsSearchStartButton.Name = "sfsSearchStartButton";
             this.sfsSearchStartButton.Size = new System.Drawing.Size(99, 23);
-            this.sfsSearchStartButton.TabIndex = 3;
+            this.sfsSearchStartButton.TabIndex = 2;
             this.sfsSearchStartButton.Text = "Start";
             this.sfsSearchStartButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.sfsSearchStartButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -254,7 +259,7 @@
             this.sfsSearchStopButton.Location = new System.Drawing.Point(425, 163);
             this.sfsSearchStopButton.Name = "sfsSearchStopButton";
             this.sfsSearchStopButton.Size = new System.Drawing.Size(99, 23);
-            this.sfsSearchStopButton.TabIndex = 3;
+            this.sfsSearchStopButton.TabIndex = 4;
             this.sfsSearchStopButton.Text = "Stop";
             this.sfsSearchStopButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.sfsSearchStopButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -267,7 +272,7 @@
             this.sfsSearchResultsGroupBox.Location = new System.Drawing.Point(12, 193);
             this.sfsSearchResultsGroupBox.Name = "sfsSearchResultsGroupBox";
             this.sfsSearchResultsGroupBox.Size = new System.Drawing.Size(512, 363);
-            this.sfsSearchResultsGroupBox.TabIndex = 4;
+            this.sfsSearchResultsGroupBox.TabIndex = 0;
             this.sfsSearchResultsGroupBox.TabStop = false;
             this.sfsSearchResultsGroupBox.Text = "Search results";
             // 
@@ -280,6 +285,7 @@
             this.sfsSearchResultsTreeView.SelectedImageIndex = 0;
             this.sfsSearchResultsTreeView.Size = new System.Drawing.Size(499, 340);
             this.sfsSearchResultsTreeView.TabIndex = 0;
+            this.sfsSearchResultsTreeView.TabStop = false;
             this.sfsSearchResultsTreeView.DoubleClick += new System.EventHandler(this.sfsSearchResultsTreeView_DoubleClick);
             // 
             // sfsTreeViewImageList
@@ -296,6 +302,7 @@
             this.sfsAboutButton.Name = "sfsAboutButton";
             this.sfsAboutButton.Size = new System.Drawing.Size(113, 23);
             this.sfsAboutButton.TabIndex = 3;
+            this.sfsAboutButton.TabStop = false;
             this.sfsAboutButton.Text = "About";
             this.sfsAboutButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.sfsAboutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -336,22 +343,23 @@
             this.enLangToolStripMenuItem.Text = "English";
             this.enLangToolStripMenuItem.Click += new System.EventHandler(this.EnLangToolStripMenuItem_Click);
             // 
-            // button1
+            // btnExport
             // 
-            this.button1.Location = new System.Drawing.Point(132, 164);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "EXP";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.Location = new System.Drawing.Point(489, 527);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(27, 25);
+            this.btnExport.TabIndex = 5;
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 584);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.sfsSearchResultsGroupBox);
             this.Controls.Add(this.sfsSearchStopButton);
             this.Controls.Add(this.sfsSearchPauseButton);
@@ -367,7 +375,7 @@
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Simple Full-Text Searcher v 1.1.0";
+            this.Text = "Ultimate File Text Search";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.sfsStatusStrip.ResumeLayout(false);
@@ -411,7 +419,7 @@
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ruLangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enLangToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExport;
     }
 }
 

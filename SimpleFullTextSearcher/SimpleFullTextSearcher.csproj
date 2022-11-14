@@ -102,6 +102,7 @@
     <Compile Include="FileSearcher\EventArgs\FoundInfoEventArgs.cs" />
     <Compile Include="FileSearcher\EventArgs\SearchInfoEventArgs.cs" />
     <Compile Include="FileSearcher\EventArgs\ThreadEndedEventArgs.cs" />
+    <Compile Include="FileSearcher\Helpers\ExportHelper.cs" />
     <Compile Include="FileSearcher\Helpers\FullTextSearchHelper.cs" />
     <Compile Include="FileSearcher\Helpers\IconHelper.cs" />
     <Compile Include="FileSearcher\Searcher.cs" />
@@ -157,6 +158,8 @@
     <Content Include="Images\file.png" />
     <Content Include="Images\folder.png" />
     <Content Include="Images\information.png" />
+    <Content Include="Images\MicrosoftExcelIcon.png" />
+    <Content Include="Images\Microsoft_Office_Excel_%282019–present%29.svg.png" />
     <Content Include="Images\pause.png" />
     <Content Include="Images\start.png" />
     <Content Include="Images\stop.png" />
