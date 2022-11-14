@@ -11,7 +11,7 @@
 ## Features
 
 - Full-text search in many file types:
-	- Text files: `.txt`, `.ini`, `.json`, `.csv`, `.yaml` 
+	- Text files: `.txt`, `.ini`, `.json`, `.csv`, `.yaml`, `.sc2`
 	- Pdf files: `.pdf`
 	- Microsoft Word files: `.rtf`, `.doc`, `.docx`, `.html`, `.dot`, `.dotx`, `.dotm`, `.odt`, `.ott`, `.docm`
 	- Microsoft Excel files: `.xls`, `.xlsx`
