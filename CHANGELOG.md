@@ -9,4 +9,5 @@
 ## v1.0.0 `(15.11.2022)`
 - [x] Added file support for FoxPro files`.sc2, .vc2, .fr2, .prg, .vmr`
 - [x] Added excel export
+- [x] Fixed tab order
 - [x] Fixed TreeView height for the bottom was not visible
