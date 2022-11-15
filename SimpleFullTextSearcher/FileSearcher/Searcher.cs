@@ -9,8 +9,6 @@ namespace SimpleFullTextSearcher.FileSearcher
 {
     public static class Searcher
     {
-        #region Asynchronous Events
-
         public delegate void FoundInfoEventHandler(FoundInfoEventArgs e);
         public static event FoundInfoEventHandler FoundInfo;
 
@@ -20,10 +18,6 @@ namespace SimpleFullTextSearcher.FileSearcher
         public delegate void ThreadEndedEventHandler(ThreadEndedEventArgs e);
         public static event ThreadEndedEventHandler ThreadEnded;
 
-        #endregion
-
-        #region Variables
-
         private static Task _searchTask;
         private static CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
         private static bool _pauseSearch;
@@ -31,10 +25,6 @@ namespace SimpleFullTextSearcher.FileSearcher
         private static byte[] _containingBytes;
         private static int _foundedCount;
         private static int _count;
-
-        #endregion
-
-        #region Public Methods
 
         public static bool Start(SearcherParams searchParams)
         {
@@ -56,10 +46,6 @@ namespace SimpleFullTextSearcher.FileSearcher
         public static void Pause() => _pauseSearch = !_pauseSearch;
 
         public static void Stop() => _cancellationTokenSource.Cancel();
-
-        #endregion
-
-        #region Private Methods
 
         private static void ResetVariables()
         {
@@ -199,6 +185,7 @@ namespace SimpleFullTextSearcher.FileSearcher
             var matches = false;
 
             //ToDo: здесь добавить поиски по различным расширениям файлов (и для незапороленных архивов распаковать сначала, потом все файлы проверять)
+            //ToDo (translated): add searches for different file extensions (and for packed archives to unpack first, then check all files)
             if (_searchParams.ContainingChecked)
             {
                 switch (new FileInfo(info.FullName).Extension.ToLower())
@@ -209,6 +196,10 @@ namespace SimpleFullTextSearcher.FileSearcher
                     case ".csv":
                     case ".yaml":
                     case ".sc2":
+                    case ".vc2":
+                    case ".fr2":
+                    case ".prg":
+                    case ".vmr":
                         try
                         {
                             var encoding = TextFileEncodingHelper.DetectTextFileEncoding(info.FullName) ?? _searchParams.Encoding;
@@ -425,6 +416,5 @@ namespace SimpleFullTextSearcher.FileSearcher
 
             return contains;
         }
-        #endregion
     }
 }

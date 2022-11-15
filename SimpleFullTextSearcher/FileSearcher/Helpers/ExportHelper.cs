@@ -1,10 +1,5 @@
 ﻿using OfficeOpenXml;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SimpleFullTextSearcher.FileSearcher.Helpers
@@ -19,7 +14,6 @@ namespace SimpleFullTextSearcher.FileSearcher.Helpers
             int rowCounter = 0;
 
             RecurseNodes(treeView.Nodes, 1);
-
             void RecurseNodes(TreeNodeCollection currentNode, int col)
             {
                 foreach (TreeNode node in currentNode)

@@ -1,12 +1,12 @@
-# Road map
+# Roadmap
 
-- [ ] Fix open [issues](https://github.com/unchase/SimpleFullTextSearcher/issues/)
-- [ ] Gather [feedback](https://github.com/unchase/SimpleFullTextSearcher/issues/new) and plan further features to implement
+- [ ] Search subdirectories
+- [ ] Add json-config for dynamic filetype and extension support
+- [ ] Make excel export asnyc
+- [ ] Convert to dotnet 7 MAUI
 
 # Change log
-
-## v1.1.0 `(2018-12-30 - 2019-08-05)`
-
-- [x] Extension of supported file formats for searching
-- [x] Add localization (ru, en)
-- [x] Code refactoring
+## v1.0.0 `(15.11.2022)`
+- [x] Added file support for FoxPro files`.sc2, .vc2, .fr2, .prg, .vmr`
+- [x] Added excel export
+- [x] Fixed TreeView height for the bottom was not visible

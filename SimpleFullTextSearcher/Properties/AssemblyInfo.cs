@@ -1,17 +1,16 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("SimpleFullTextSearcher")]
-[assembly: AssemblyDescription("Simple application to full-text searching in file system")]
+[assembly: AssemblyDescription("Ultimate File Text Search")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("unchase")]
-[assembly: AssemblyProduct("SimpleFullTextSearcher")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
-[assembly: AssemblyTrademark("unchase")]
+[assembly: AssemblyCompany("Harry Neufeld")]
+[assembly: AssemblyProduct("Ultimate File Text Search")]
+[assembly: AssemblyCopyright("Copyright © 2020")]
+[assembly: AssemblyTrademark("Harry Neufeld")]
 [assembly: AssemblyCulture("")]
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
@@ -32,5 +31,5 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номер сборки и номер редакции по умолчанию.
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.0.0")]
-[assembly: AssemblyFileVersion("1.1.0.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

@@ -1,5 +1,4 @@
-﻿using OfficeOpenXml;
-using SimpleFullTextSearcher.Extensions;
+﻿using SimpleFullTextSearcher.Extensions;
 using SimpleFullTextSearcher.FileSearcher;
 using SimpleFullTextSearcher.FileSearcher.EventArgs;
 using SimpleFullTextSearcher.FileSearcher.Helpers;
@@ -18,15 +17,12 @@ namespace SimpleFullTextSearcher
 
     public partial class FormMain : Form
     {
-        #region Settings
         /// <summary>
         /// Класс для хранения критериев поиска
         /// </summary>
         [DataContract]
         public class Settings
         {
-            #region Properties
-
             /// <summary>
             /// Начальная директория поиска
             /// </summary>
@@ -43,10 +39,6 @@ namespace SimpleFullTextSearcher
             [DataMember]
             public string SearchText { get; set; }
 
-            #endregion
-
-            #region Constructors
-
             public Settings() : this("", "", "") { }
 
             public Settings(string initialDirectory, string fileNamePattern, string searchText)
@@ -56,9 +48,6 @@ namespace SimpleFullTextSearcher
                 SearchText = searchText;
             }
 
-            #endregion
-
-            #region SearchCriteria Save/Load
             public static void SaveSearchCriteriaToJson(Settings contract)
             {
                 try
@@ -89,11 +78,8 @@ namespace SimpleFullTextSearcher
                     return default(Settings);
                 }
             }
-            #endregion
         }
-        #endregion
-
-        #region Variables
+        
         /// <summary>
         /// Полный путь к json-файлу, содержащему сохраненные критерии поиска
         /// </summary>
@@ -107,10 +93,6 @@ namespace SimpleFullTextSearcher
 
         private bool _searchOnPause;
 
-        #endregion
-
-        #region Synchronizing Delegates
-
         private delegate void FoundInfoSyncHandler(FoundInfoEventArgs e);
 
         private FoundInfoSyncHandler _foundInfo;
@@ -122,8 +104,6 @@ namespace SimpleFullTextSearcher
         private delegate void ThreadEndedSyncHandler(ThreadEndedEventArgs e);
 
         private ThreadEndedSyncHandler _taskEnded;
-
-        #endregion
 
         public FormMain()
         {
