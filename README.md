@@ -1,4 +1,4 @@
-[Simple Full Text Searcher](https://github.com/harryneufeld/FileTextSearch) is a simple program for full-text searching in files of any type with the ability to pause and stop completely. As a result of the search, it displays a list of files in which the search string was found and the time taken to search. 
+[Ultimate File Text Search](https://github.com/harryneufeld/FileTextSearch) is a simple program for full-text searching in files of any type with the ability to pause and stop completely. As a result of the search, it displays a list of files in which the search string was found and the time taken to search. 
 Additionaly a excel sheet can be exported from results.
 
 ## Features
@@ -30,4 +30,5 @@ Localized by [Poedit](https://poedit.net/). You can help the project by adding y
 See the [changelog](CHANGELOG.md) for the further development plans and version history.
 
 Copyright master-repository &copy; 2018 [Nikolay Chebotov (**Unchase**)](https://github.com/unchase) - Provided under the [Apache License 2.0](LICENSE.md).
+
 Copyright &copy; 2022 [Harry Neufeld](https://github.com/harryneufeld) - Provided under the GNU General Public License [GPLV3](https://www.gnu.org/licenses/gpl-3.0.html)
