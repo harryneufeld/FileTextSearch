@@ -1,6 +1,5 @@
 # Roadmap
 
-- [ ] Search subdirectories
 - [ ] Add json-config for dynamic filetype and extension support
 - [ ] Make excel export asnyc
 - [ ] Convert to dotnet 7 MAUI
